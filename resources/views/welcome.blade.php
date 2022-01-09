@@ -22,24 +22,26 @@
 
 				<!-- Logo -->
 				<a class="logo">
-					<span class="fa fa-pencil"></span> <span class="title">AREA 17 - Blogging Platform</span>
+					<span class="fa fa-pencil"></span> <span class="title" style="font-weight: bold; font-size:18px;">AREA 17 - Blogging Platform</span>
 				</a>
 
 
-				<div class="button-div" style="justify-content: space-evenly;">
+				<div class="button-div" style="justify-content: space-evenly; display:flex;">
 
                     <a href="{{ route('login') }}" style="border: none;">
-                        <button class="favorite styled button-30" type="button-29" >
+                        <button class="favorite styled button-30" type="button-29" style="font-size: 12px; heigth:23px;">
                             Login
                         </button>
                     </a>
 
-
-                    <a href="{{ route('register') }}" style="border: none;">
-                      <button class="favorite styled" type="button"  >
-						Register
+                    <div style="margin-left: 10px;">
+                       <a href="{{ route('register') }}" style="border: none; color:white" >
+                      <button class="favorite styled" type="button"  style="font-size: 12px; heigth:23px; background-color:rgb(99, 99, 99); color:white !important">
+						 Register
 					</button>
                     </a>
+                    </div>
+
 
 				</div>
 

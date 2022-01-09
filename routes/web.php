@@ -21,6 +21,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+#Region Blog
+Route::post('/create_blog', 'BlogController@create')->middleware('auth');
+
 require __DIR__.'/auth.php';
 
 
