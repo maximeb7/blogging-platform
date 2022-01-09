@@ -16,6 +16,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 <header class="bg-white shadow">
     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -24,11 +26,12 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" />
+
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
         <noscript>
             <link rel="stylesheet" href="{{ asset('assets/css/noscript.css') }}" />
         </noscript>
-        <div class="inner" style="display: flex; flex-direction:row; justify-content: space-between">
+        <div class="inner" style="display: flex; flex-direction:row; justify-content: space-between; height:10vh; align-content:center; width:auto">
 
             <!-- Logo -->
             <a class="logo" style="border: none;">
@@ -36,18 +39,21 @@
                     <img src="images/area17-log.jpg" alt=""> <span class="title">AREA 17 - Blogging
                         Platform Welcome Username</span>
                 </div>
-
             </a>
 
 
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <x-dropdown align="right" width="48">
+
+
+
+            {{-- <div class="dropdown" style=" display:flex;width: 30px; margin-right:13vh; margin-top:2vh; height:3vh">
+                <x-dropdown align="right" width="20">
                     <x-slot name="trigger">
                         <button
                             class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                             <div>{{ Auth::user()->name }}</div>
 
-                            <div class="ml-1">
+
+                            <div class="ml-1" >
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
@@ -58,8 +64,9 @@
                         </button>
                     </x-slot>
 
-                    <x-slot name="content" style="border: none;">
+                    <x-slot name="content" >
                         <!-- Authentication -->
+
                         <form method="POST" action="{{ route('logout') }}" style="margin: 0px;">
                             @csrf
 
@@ -70,7 +77,7 @@
                         </form>
                     </x-slot>
                 </x-dropdown>
-            </div>
+            </div> --}}
 
 
 
