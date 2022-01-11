@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Str;
 
 class RegisteredUserController extends Controller
 {
@@ -34,16 +35,19 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'string','regex:/^[a-zA-Z]+$/u' , 'max:255', 'unique:users,name'],
+            'name' => ['required', 'alpha_num' , 'max:255', 'unique:users,name'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             //'password' => ['required', 'min:8', 'regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/', 'confirmed', Rules\Password::defaults()],
             'password' => ['required', 'min:8', 'regex:/(?:[^`!@#$%^&*\-_=+\'\/.,]*[`!@#$%^&*\-_=+\'\/.,]){2}/', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        $user_slug = Str::of(strtolower($request->name))->slug('-');
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'slug_name' => $user_slug
         ]);
 
         event(new Registered($user));

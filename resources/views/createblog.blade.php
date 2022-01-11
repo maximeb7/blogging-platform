@@ -1,8 +1,8 @@
 <html>
 <body>
-      <h2 style="margin-left: 80px; margin-top:20px;">Hello {{ Auth::user()->name}} !</h2>
-       <div id="app">
 
+       <div id="app">
+        <h2 style="margin-left: 80px; margin-top:20px;">Hello {{ Auth::user()->name}} !</h2>
         <section>
             <div style="margin-left: 18%; width:900px;">
                 <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('create_post')}}">

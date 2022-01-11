@@ -88,7 +88,7 @@
 </header>
 
 <body class="font-sans antialiased">
-    <div class="max-h-screen bg-gray-100">
+    <div class="max-h-screen bg-gray-100" id="app">
 
 
         <!-- Page Heading -->

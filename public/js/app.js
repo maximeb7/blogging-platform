@@ -24398,10 +24398,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "container"
+  method: "post"
 };
+
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"form-group\"><label for=\"exampleInputEmail1\">Title</label><input type=\"text\" id=\"title\" name=\"title\" class=\"form-control\" required=\"\"></div><div class=\"form-group\"><label for=\"exampleInputEmail1\">Description</label><textarea name=\"content\" id=\"mytextarea\" cols=\"30\" rows=\"10\"></textarea></div><input id=\"author\" name=\"author\" type=\"hidden\"><button type=\"submit\" class=\"btn btn-primary\">Submit</button>", 4);
+
+var _hoisted_6 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, " Choose a new blog name : ");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("form", _hoisted_1, _hoisted_6);
 }
 
 /***/ }),
