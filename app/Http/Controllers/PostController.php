@@ -6,11 +6,30 @@ use App\Models\Post;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\Redirect;
+use Spatie\QueryBuilder\QueryBuilder;
 use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
+
+    /**
+     * Retrieve all the posts available
+     */
+    public function index()
+    {
+        $all_posts = Post::orderBy('created_at', 'DESC')->get();
+
+        // dd($all_posts->toArray());
+
+        return view("home")->with('array_posts' , $all_posts->toArray());
+        // return view('home', array('all_posts' => (array)$all_posts));
+
+    }
+
+
+    /**
+     * Create a new post
+     */
     public function create(Request $request)
     {
         $validator = Validator::make($request->all(), [

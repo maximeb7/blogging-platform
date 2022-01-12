@@ -1,5 +1,7 @@
 <template>
-    <form method="post" >
+<div>
+       <h1>Test mon pote!!!!!!!!!!!!!</h1>
+<!-- <form method="post" >
 
                      <div class="form-group">
                        <label for="exampleInputEmail1">Title</label>
@@ -13,7 +15,10 @@
                      <input id="author" name="author" type="hidden" >
 
                      <button type="submit" class="btn btn-primary">Submit</button>
-                   </form>
+                   </form> -->
+
+</div>
+
 </template>
 
 <script>

@@ -14,9 +14,13 @@ use App\Http\Controllers\BlogController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//  Route::get('/', function () {
+//      return view('home');
+//  });
+
+//Route::get('/', function () {
+//    return view('home', 'App\Http\Controllers\PostController@index');
+//});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -26,6 +30,9 @@ Route::get('/dashboard', function () {
 Route::post('/create_blog', 'App\Http\Controllers\BlogController@create')->middleware('auth');
 
 Route::post('/create_post', 'App\Http\Controllers\PostController@create')->middleware('auth');
+
+
+Route::get('/', 'App\Http\Controllers\PostController@index');
 
 require __DIR__.'/auth.php';
 

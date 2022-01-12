@@ -23,6 +23,10 @@ class Post extends Model
         'post_content',
     ];
 
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d H:00',
+    ];
+
     /**
      * Get the options for generating the slug.
      */
@@ -39,6 +43,7 @@ class Post extends Model
     {
         return 'slug_title';
     }
+
 
 
 }
