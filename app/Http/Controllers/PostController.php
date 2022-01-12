@@ -17,11 +17,14 @@ class PostController extends Controller
      */
     public function index()
     {
-        $all_posts = Post::orderBy('created_at', 'DESC')->get();
+        $all_posts = Post::orderBy('created_at', 'DESC')->paginate(3);
+        // dd($all_posts);
 
         // dd($all_posts->toArray());
 
-        return view("home")->with('array_posts' , $all_posts->toArray());
+        //return view("home")->with('array_posts' , $all_posts->toArray());
+
+        return view('home', ['array_posts' => $all_posts]);
         // return view('home', array('all_posts' => (array)$all_posts));
 
     }
