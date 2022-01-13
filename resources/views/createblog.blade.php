@@ -19,7 +19,7 @@
                      </div>
                      <input id="author" name="author" type="hidden" value="{{Auth::user()->id}}">
 
-                     <button type="submit" class="btn btn-primary">Submit</button>
+                     <button type="submit" class="favorite styled button-30" type="button-29" style="font-size: 12px; heigth:23px;width:15%; background-color:#361e62;color:white !important">Save</button>
                    </form>
             </div>
 

@@ -33,7 +33,8 @@
 
 				<div class="button-div" style="justify-content: space-evenly; display:flex;">
 
-                    <a href="{{ route('login') }}" style="border: none;">
+                    @if(!Auth::user())
+                      <a href="{{ route('login') }}" style="border: none;">
                         <button class="favorite styled button-30" type="button-29" style="font-size: 12px; heigth:23px;">
                             Login
                         </button>
@@ -46,6 +47,21 @@
 					</button>
                     </a>
                     </div>
+                    @else
+
+
+
+                    <form method="POST" action="{{ route('logout') }}" style="margin: 0px;color:white;">
+                        @csrf
+                        <a style="border: none;" :href="route('logout')" onclick="event.preventDefault();
+                        this.closest('form').submit();">
+                        <button class="favorite styled button-30" type="button-29" style="font-size: 12px; heigth:23px;">
+                            Logout
+                        </button>
+                    </a>
+                    </form>
+                    @endif
+
 
 
 				</div>
@@ -124,9 +140,9 @@
                         <h3 class="m-n">{{ Str::limit($post['title'],15)}}</h3>
                         <p> {{$post->user_name}} | {{$post->created_at}}</p>
                         <div>{!! Str::limit($post->post_content, 400) !!}</div>
-                        <a href="{{ route('post.see', [$post->user_name, $post->slug_title] )}}" style="border: none;">
+                        <a href="{{ route('post.see', [$post->user_name, $post->slug_title] )}} " style="border: none;">
                             <button class="favorite styled button-30" type="button-29" style="font-size: 12px; heigth:23px;width:100%">
-                                See Post {{$post->user_name}}/{{$post->slug_title}}/{{$post->id}}
+                                See Post {{$post->user_name}}/{{$post->slug_title}}
                             </button>
                         </a>
                     </div>
