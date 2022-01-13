@@ -54,8 +54,10 @@
                                 <div class="col-sm-4">
                                     <h1 style="margin: 0 0 0 0">{{ $post->title }}</h1>
 
+
                                 <h6 style="color: #5b5b5b;"> by {{ $post->user_name }}</h6>
                                 </div>
+
 
 
                                 <a href="" style="border: none;margin-top: 2%; color:white;">
@@ -71,6 +73,13 @@
 							</div>
 
 							<div>{!! $post->post_content !!}</div>
+                            @if(Auth::user() && Auth::user()->id == $post->user_id)
+                            <a href="" style="border: none;margin-top: 7%;margin-left:84%; color:white;">
+                                <button class="favorite styled button-30" type="button-29" style="font-size: 12px; heigth:23px;width:15%; background-color:#361e62;color:white !important">
+                                    Edit
+                                </button>
+                            </a>
+                            @endif
 						</div>
 					</div>
 
