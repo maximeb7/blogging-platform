@@ -29,6 +29,21 @@ class PostController extends Controller
 
     }
 
+    public function show(Request $request)
+    {
+
+        $url_slugs = explode('/',$request->getPathInfo());
+        $user_name = $url_slugs[1];
+        $slug_title = $url_slugs[2];
+
+        $post = Post::where([
+            ['user_name','=',$user_name],
+            ['slug_title','=',$slug_title]
+        ])->first();
+
+        return view('view-post', ['post' => $post] );
+    }
+
 
     /**
      * Create a new post

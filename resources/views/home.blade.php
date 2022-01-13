@@ -124,7 +124,7 @@
                         <h3 class="m-n">{{ Str::limit($post['title'],15)}}</h3>
                         <p> {{$post->user_name}} | {{$post->created_at}}</p>
                         <div>{!! Str::limit($post->post_content, 400) !!}</div>
-                        <a href="{{ route('login') }}" style="border: none;">
+                        <a href="{{ route('post.see', [$post->user_name, $post->slug_title] )}}" style="border: none;">
                             <button class="favorite styled button-30" type="button-29" style="font-size: 12px; heigth:23px;width:100%">
                                 See Post {{$post->user_name}}/{{$post->slug_title}}/{{$post->id}}
                             </button>

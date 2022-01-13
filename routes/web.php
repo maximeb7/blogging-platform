@@ -27,12 +27,16 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 #Region Blog
-Route::post('/create_blog', 'App\Http\Controllers\BlogController@create')->middleware('auth');
+//Route::post('/create_blog', 'App\Http\Controllers\BlogController@create')->middleware('auth');
 
+
+#RegionPost
 Route::post('/create_post', 'App\Http\Controllers\PostController@create')->middleware('auth');
-
-
 Route::get('/', 'App\Http\Controllers\PostController@index');
+// Route::get('/{username}/{slug_post}', function (){
+//     return view('view-post');
+// })->name('post.see');
+Route::get('/{username}/{slug_post}','App\Http\Controllers\PostController@show' )->name('post.see');
 
 require __DIR__.'/auth.php';
 
