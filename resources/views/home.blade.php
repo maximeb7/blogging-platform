@@ -134,26 +134,35 @@
 				<h2 class="h2">Latest blog posts</h2>
 
 
-                <div class="row">
-                @foreach ($array_posts as $post )
-                    <div class="col-sm-4 text-center" style="padding-bottom:3%">
-                        <h3 class="m-n">{{ Str::limit($post['title'],15)}}</h3>
-                        <p> {{$post->user_name}} | {{$post->created_at}}</p>
-                        <div>{!! Str::limit($post->post_content, 400) !!}</div>
-                        <a href="{{ route('post.see', [$post->user_name, $post->slug_title] )}} " style="border: none;">
-                            <button class="favorite styled button-30" type="button-29" style="font-size: 12px; heigth:23px;width:100%">
-                                See Post {{$post->user_name}}/{{$post->slug_title}}
-                            </button>
-                        </a>
-                    </div>
 
-                @endforeach
+					<div class="row ">
+						@foreach ($array_posts as $post )
+							<div class="col-sm-4" style="padding-bottom:3% ">
+                                <div style="margin-bottom: 15%;  height:40vh;">
+                                    <h3 class="m-n">{{ Str::limit($post['title'],40)}}</h3>
+								<p> {{$post->user_name}} | {{$post->created_at}}</p>
+								<div class="new-content" >{!! Str::limit($post->post_content, 500) !!}</div>
 
-                <div>
-                    {!! $array_posts->links('vendor.pagination.bootstrap-4') !!}
-                </div>
+                                </div>
+                                <div style="margin-left:15vh">
+                                  <a href="{{ route('post.see', [$post->user_name, $post->slug_title] )}} " style="border: none;">
+									<button class="favorite styled button-30" type="button-29" style="font-size: 10px; heigth:23px;width:50%">
+										See Post
+									</button>
+								</a>
+                                </div>
 
-                </div>
+							</div>
+
+						@endforeach
+
+
+
+						</div>
+                        <div>
+							{!! $array_posts->links('vendor.pagination.bootstrap-4') !!}
+						</div>
+
 
 
 
@@ -233,3 +242,19 @@
 </body>
 
 </html>
+
+<style>
+	.new-content{
+		overflow: hidden;
+
+	}
+	.new-content img{
+		width: 100%;
+		border: none;
+		height: auto;
+	}
+	.new-content p{
+		width: 100%;
+	}
+
+</style>
