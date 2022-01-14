@@ -5,7 +5,8 @@
 
 
         <section>
-            <div style="margin-left: 18%; width:900px;">
+            <div style="margin-left: 18%; width:900px; max-height: 100vh;
+            overflow: auto;">
                 <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('create_post')}}">
                     @csrf
                      <div class="form-group">

@@ -6,12 +6,12 @@
     -moz-box-shadow: 9px 1px 5px -1px rgba(209,209,209,0.53); height:100%; display:flex;">
 
         <div
-            style=" width:10%; background-color:rgb(31, 31, 31); height:900px; margin-left:0px; display:flex;flex-direction:column">
+            style=" width:10%; background-color:rgb(31, 31, 31); height:100%; margin-left:0px; display:flex;flex-direction:column">
 
 
             <div style="color: white; border:none; margin-left:6%;margin-top:7%;">
                 <span class="fa fa-eye"></span><a href="#" class="w3-bar-item w3-button"
-                    style="color: white; border:none; margin-left:12%;">My Blogs</a><br>
+                    style="color: white; border:none; margin-left:12%;">My Posts</a><br>
             </div>
 
             <div style="color: white; border:none; margin-left:6%;margin-top:75vh;">

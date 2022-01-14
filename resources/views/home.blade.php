@@ -131,7 +131,7 @@
 
 				<br>
 
-				<h2 class="h2">Latest blog posts</h2>
+				<h2 class="h2" style="color: rgb(18, 18, 18)">Latest blog posts</h2>
 
 
 
