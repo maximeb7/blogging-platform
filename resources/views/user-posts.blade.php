@@ -52,10 +52,10 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1> Welcome to {{ $user_name }} blog</h1>
+							<h1> {{ $user_name }} blog</h1>
 
 							<div class="image main">
-								<img src="images/banner-image-3-1920x500.jpg" class="img-fluid" alt="" />
+								<img src="images/slider-image-1-1920x700.jpg" class="img-fluid" alt="" />
 							</div>
 
 							<div class="container-fluid">
@@ -85,10 +85,11 @@
                                             </div>
 
 							            </div>
-                                        </div>
-
-
+                                    </div>
 						    @endforeach
+                            <div>
+                                {!! $array_posts->links('vendor.pagination.bootstrap-4') !!}
+                            </div>
 
 									</div>
 

@@ -71,7 +71,7 @@ class PostController extends Controller
     public function getUserPost($username)
     {
 
-        $user_posts = Post::where('user_name','=',$username)->orderBy('created_at','DESC')->get();
+        $user_posts = Post::where('user_name','=',$username)->orderBy('created_at','DESC')->paginate(3);
 
         if($user_posts->isNotEmpty())
         {
