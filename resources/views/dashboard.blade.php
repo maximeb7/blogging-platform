@@ -21,14 +21,14 @@
 
             <div style="color: white; border:none; margin-left:0%;margin-top:7%;">
 
-                    <form method="POST" action="{{ route('logout') }}" style="margin: 0px;color:white;">
-                        @csrf
-                        <span class="fa fa-sign-out" style="color: white; margin-left:7%"></span>
-                        <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
+                <form method="POST" action="{{ route('logout') }}" style="margin: 0px;color:white;">
+                    @csrf
+                    <span class="fa fa-sign-out" style="color: white; margin-left:7%"></span>
+                    <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
                                 this.closest('form').submit();" style="color: white; margin-left:0%;">Logout
-                        </x-dropdown-link>
-                    </form>
-                    </a><br>
+                    </x-dropdown-link>
+                </form>
+                </a><br>
             </div>
 
         </div>
@@ -36,7 +36,7 @@
         <div>
             <h2 style="margin-left: 80px; margin-top:20px; color:rgb(62, 62, 62)">Hello {{ Auth::user()->name}} !</h2>
             @if (isset($success))
-               <h3 style="margin-left: 80px; margin-top:15px;"> Congratulations !!{{$success}}</h3>
+            <h3 style="margin-left: 80px; margin-top:15px;"> Congratulations !!{{$success}}</h3>
 
 
             @endif
