@@ -60,7 +60,7 @@
 
 
 
-                                <a href="" style="border: none;margin-top: 2%; color:white;">
+                                <a href="{{ route('post.user', $post->user_name )}}" style="border: none;margin-top: 2%; color:white;">
                                     <button class="favorite styled button-30" type="button-29" style="font-size: 12px; heigth:23px;width:100%; background-color:#343434;color:white !important">
                                         Go to {{$post->user_name}} blog
                                     </button>

@@ -38,6 +38,12 @@ Route::get('/', 'App\Http\Controllers\PostController@index');
 // })->name('post.see');
 Route::get('/{username}/{slug_post}','App\Http\Controllers\PostController@show' )->name('post.see');
 
+Route::get('/{username}', 'App\Http\Controllers\PostController@getUserPost' )->name('post.user');
+
+// Route::get('/{username}', function(){
+//     return view('user-posts');
+// } )->name('post.user');
+
 require __DIR__.'/auth.php';
 
 

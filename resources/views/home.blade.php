@@ -137,20 +137,30 @@
 
 					<div class="row ">
 						@foreach ($array_posts as $post )
-							<div class="col-sm-4" style="padding-bottom:3% ">
-                                <div style="margin-bottom: 15%;  height:40vh;">
+							<div class="col-sm-4 shadow-sm p-3 mb-5 bg-white rounded" style="padding-bottom:3% ">
+                                <div style="margin-bottom: 2%;  height:40vh;">
                                     <h3 class="m-n">{{ Str::limit($post['title'],40)}}</h3>
 								<p> {{$post->user_name}} | {{$post->created_at}}</p>
 								<div class="new-content" >{!! Str::limit($post->post_content, 500) !!}</div>
 
                                 </div>
-                                <div style="margin-left:15vh">
+                                <div style="display: flex; flex-direction:row; justify-content:right">
+                                    <div style="">
                                   <a href="{{ route('post.see', [$post->user_name, $post->slug_title] )}} " style="border: none;">
-									<button class="favorite styled button-30" type="button-29" style="font-size: 10px; heigth:23px;width:50%">
+									<button class="favorite styled button-30" type="button-29" style="font-size: 9px; heigth:23px;width:100%">
 										See Post
 									</button>
 								</a>
                                 </div>
+                                <div style="margin-left: 1.5vh;">
+                                    <a href="{{ route('post.user', $post->user_name )}}" style="border: none;margin-top: 2%; color:white;">
+                                      <button class="favorite styled button-30" type="button-29" style="font-size: 9px; heigth:23px;width:100%; background-color:#343434;color:white !important">
+                                        {{$post->user_name}} blog
+                                      </button>
+                                  </a>
+                                  </div>
+                                </div>
+
 
 							</div>
 

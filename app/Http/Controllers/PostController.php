@@ -18,15 +18,8 @@ class PostController extends Controller
     public function index()
     {
         $all_posts = Post::orderBy('created_at', 'DESC')->paginate(6);
-        // dd($all_posts);
-
-        // dd($all_posts->toArray());
-
-        //return view("home")->with('array_posts' , $all_posts->toArray());
 
         return view('home', ['array_posts' => $all_posts]);
-        // return view('home', array('all_posts' => (array)$all_posts));
-
     }
 
     public function show(Request $request)
@@ -71,8 +64,18 @@ class PostController extends Controller
             'post_content' => $request->get('post_content')
         ]);
 
-        //return Redirect::to('/dashboard')->with('success','The post "'.$request->get('title').'" has been created !');
         return view('dashboard', array('success' => 'The post "'.$request->get('title').'" has been created !'));
-       //return new JsonResponse([],200);
+    }
+
+
+    public function getUserPost($username)
+    {
+
+        $user_posts = Post::where('user_name','=',$username)->orderBy('created_at','DESC')->get();
+
+        if($user_posts->isNotEmpty())
+        {
+            return view('user-posts', ['array_posts' => $user_posts, 'user_name' => ucfirst($username)]);
+        }
     }
 }
