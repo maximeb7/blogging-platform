@@ -70,28 +70,54 @@
 
                             </div>
 
-                            @foreach ($array_posts as $post )
+                            @foreach ($array_posts as $post)
 
-                            <div style="margin-top:9%; margin-left:5%; margin-right:5%; ">
-                                <div class="col-sm-10 text-center ml-5 mt-3 mb-5 shadow-sm p-3 mb-5 bg-white rounded">
-                                    <div style="margin-bottom: 3%;  height:40vh;">
-                                        <h3 class="m-n">{{ Str::limit($post['title'],40)}}</h3>
-                                        <p> {{$post->user_name}} | {{$post->created_at}}</p>
-                                        <div class="new-content">{!! Str::limit($post->post_content, 500) !!}</div>
+                                <div style="margin-top:9%; margin-left:5%; margin-right:5%; ">
+                                    <div
+                                        class="col-sm-10 text-center ml-5 mt-3 mb-5 shadow-sm p-3 mb-5 bg-white rounded">
+                                        <div style="margin-bottom: 3%;  height:40vh;">
+                                            <h3 class="m-n">{{ Str::limit($post['title'], 40) }}</h3>
+                                            <p> {{ $post->user_name }} | {{ $post->created_at }}</p>
+                                            <div class="new-content">{!! Str::limit($post->post_content, 500) !!}</div>
+
+                                        </div>
+
+                                        <div style="display:flex; justify-content:right; padding-right:17%; margin-top:2%">
+                                            <div style="margin-right:30vh">
+                                                <a href="{{ route('post.see', [$post->user_name, $post->slug_title]) }} "
+                                                    style="border: none;">
+                                                    <button class="favorite styled button-30" type="button-29"
+                                                        style="font-size: 10px; heigth:23px;width:100%">
+                                                        See Post
+                                                    </button>
+                                                </a>
+                                            </div>
+                                        @if (Auth::user() && Auth::user()->id == $post->user_id)
+
+                                            <div>
+                                                <a href="" style="border: none;margin-top: 7%;margin-left:84%; color:white;">
+                                                    <button class="favorite styled button-30" type="button-29"
+                                                        style="font-size: 10px; heigth:23px;width:100%; background-color:#636363;color:white!important">
+                                                        Edit
+                                                    </button>
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href="" style="border: none;margin-top: 7%;margin-left:84%; color:white;">
+                                                    <button class="favorite styled button-30" type="button-29"
+                                                        style="font-size: 10px; heigth:23px;width:100%; background-color:#353535;color:white!important">
+                                                        Delete
+                                                    </button>
+                                                </a>
+                                            </div>
+
+
+
+                                        @endif
+                                    </div>
 
                                     </div>
-                                    <div style="margin-left:2vh">
-                                        <a href="{{ route('post.see', [$post->user_name, $post->slug_title] )}} "
-                                            style="border: none;">
-                                            <button class="favorite styled button-30" type="button-29"
-                                                style="font-size: 10px; heigth:23px;width:50%">
-                                                See Post
-                                            </button>
-                                        </a>
-                                    </div>
-
                                 </div>
-                            </div>
                             @endforeach
                             <div>
                                 {!! $array_posts->links('vendor.pagination.bootstrap-4') !!}
@@ -109,7 +135,8 @@
                                     <input type="text" class="form-control" placeholder="Search" aria-label="Search"
                                         aria-describedby="basic-addon2">
 
-                                    <span class="input-group-addon"><a href="#"><i class="fa fa-search"></i></a></span>
+                                    <span class="input-group-addon"><a href="#"><i
+                                                class="fa fa-search"></i></a></span>
                                 </div>
                             </div>
 
@@ -133,10 +160,14 @@
             <div class="inner">
                 <section>
                     <ul class="icons">
-                        <li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-                        <li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-                        <li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-                        <li><a href="#" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a>
+                        </li>
+                        <li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a>
+                        </li>
+                        <li><a href="#" class="icon style2 fa-instagram"><span
+                                    class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a>
+                        </li>
                     </ul>
 
                     &nbsp;
@@ -178,4 +209,5 @@
     .new-content p {
         width: 100%;
     }
+
 </style>

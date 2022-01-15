@@ -58,5 +58,3 @@ box-shadow: 2px 2px 17px 5px #D4D4D4;">
         </x-auth-card>
     </x-guest-layout>
 </body>
-
-

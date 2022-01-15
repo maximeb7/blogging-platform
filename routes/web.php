@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,13 @@ use App\Http\Controllers\BlogController;
 //Route::get('/', function () {
 //    return view('home', 'App\Http\Controllers\PostController@index');
 //});
+Route::get('/login', 'App\Http\Controllers\AuthenticatedSessionController@create' )
+->middleware('guest')
+->name('login');
+
+Route::get('/register', 'App\Http\Controllers\RegisteredUserController@create')
+                ->middleware('guest')
+                ->name('register');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -36,14 +44,17 @@ Route::get('/', 'App\Http\Controllers\PostController@index');
 // Route::get('/{username}/{slug_post}', function (){
 //     return view('view-post');
 // })->name('post.see');
-Route::get('/{username}/{slug_post}','App\Http\Controllers\PostController@show' )->name('post.see');
 
 Route::get('/{username}', 'App\Http\Controllers\PostController@getUserPost' )->name('post.user');
+Route::get('/{username}/{slug_post}','App\Http\Controllers\PostController@show' )->name('post.see');
 
-// Route::get('/{username}', function(){
-//     return view('user-posts');
-// } )->name('post.user');
+
+
+
+
 
 require __DIR__.'/auth.php';
+
+
 
 

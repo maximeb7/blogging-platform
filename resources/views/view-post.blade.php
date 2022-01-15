@@ -56,36 +56,52 @@
             <div class="inner">
                 <div class="row justify-content-between mh-100">
                     <div class="col-sm-4">
-                        <h1 style="margin: 0 0 0 0">{{ $post->title }}</h1>
+                        @if(isset($post) )
+                          <h1 style="margin: 0 0 0 0">{{ $post->title }}</h1>
+                          <h6 style="color: #5b5b5b;"> by {{ $post->user_name }}</h6>
+
+                        @endif
 
 
-                        <h6 style="color: #5b5b5b;"> by {{ $post->user_name }}</h6>
+
+
                     </div>
 
-
-
-                    <a href="{{ route('post.user', $post->user_name )}}"
-                        style="border: none;margin-top: 2%; color:white;">
-                        <button class="favorite styled button-30" type="button-29"
-                            style="font-size: 12px; heigth:23px;width:100%; background-color:#343434;color:white !important">
-                            Go to {{$post->user_name}} blog
-                        </button>
-                    </a>
-                </div>
-
-
-                <div class="image main">
-                    <img src="images/blog-fullscreen-1-1920x700.jpg" class="img-fluid" alt="" />
-                </div>
-
-                <div>{!! $post->post_content !!}</div>
-                @if(Auth::user() && Auth::user()->id == $post->user_id)
-                <a href="" style="border: none;margin-top: 7%;margin-left:84%; color:white;">
+                @if(isset($post))
+                <a href="{{ route('post.user', $post->user_name )}}"
+                    style="border: none;margin-top: 2%; color:white;">
                     <button class="favorite styled button-30" type="button-29"
-                        style="font-size: 12px; heigth:23px;width:15%; background-color:#361e62;color:white !important">
-                        Edit
+                        style="font-size: 12px; heigth:23px;width:100%; background-color:#343434;color:white !important">
+                        Go to {{$post->user_name}} blog
                     </button>
                 </a>
+            </div>
+
+
+            <div class="image main">
+                <img src="images/blog-fullscreen-1-1920x700.jpg" class="img-fluid" alt="" />
+            </div>
+
+            <div>{!! $post->post_content !!}</div>
+            @if(Auth::user() && Auth::user()->id == $post->user_id)
+            <div style="display: flex; flex-direction: row;">
+                <a href="" style="border: none;margin-top: 7%; color:white;">
+                <button class="favorite styled button-30" type="button-29"
+                    style="font-size: 12px; heigth:23px;width:100%; background-color:#6c6c6c;color:white !important">
+                    Edit
+                </button>
+                </a>
+                <a href="" style="border: none;margin-top: 7%;margin-left:2%; color:white;">
+                <button class="favorite styled button-30" type="button-29"
+                    style="font-size: 12px; heigth:23px;width:100%; background-color:#414141;color:white !important">
+                    Delete
+                </button>
+                </a>
+            </div>
+
+                @endif
+
+
                 @endif
             </div>
         </div>

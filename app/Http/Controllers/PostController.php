@@ -77,5 +77,14 @@ class PostController extends Controller
         {
             return view('user-posts', ['array_posts' => $user_posts, 'user_name' => ucfirst($username)]);
         }
+
+    }
+
+    public function getTest(Request $request)
+    {
+        dump($request);
+        dump('Ceci est un test');
+
+
     }
 }
