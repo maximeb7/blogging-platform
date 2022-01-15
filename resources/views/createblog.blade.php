@@ -31,7 +31,8 @@
         referrerpolicy="origin"></script>
     <script>
         tinymce.init({
-               selector:'#mytextarea'
+               selector:'#mytextarea',
+               height:400
            });
     </script>
     <script src="{{ asset('js/app.js') }}"></script>
