@@ -13,7 +13,9 @@ class PostController extends Controller
 {
 
     /**
-     * Retrieve all the posts available
+     * index display all users posts
+     *
+     * @return void
      */
     public function index()
     {
@@ -22,9 +24,15 @@ class PostController extends Controller
         return view('home', ['array_posts' => $all_posts]);
     }
 
+
+    /**
+     * show a post
+     *
+     * @param  mixed $request
+     * @return void
+     */
     public function show(Request $request)
     {
-
         $url_slugs = explode('/',$request->getPathInfo());
         $user_name = $url_slugs[1];
         $slug_title = $url_slugs[2];
@@ -36,10 +44,11 @@ class PostController extends Controller
 
         return view('view-post', ['post' => $post] );
     }
-
-
     /**
      * Create a new post
+     *
+     * @param  mixed $request
+     * @return void
      */
     public function create(Request $request)
     {
@@ -55,8 +64,6 @@ class PostController extends Controller
 
         $author = User::findOrFail($request->get('author'));
 
-        //create new post
-
         Post::create([
             'title' => $request->get('title'),
             'user_id' => $author->id,
@@ -68,6 +75,13 @@ class PostController extends Controller
     }
 
 
+
+    /**
+     * Get All user's posts
+     *
+     * @param  mixed $username
+     * @return void
+     */
     public function getUserPost($username)
     {
 
@@ -80,18 +94,18 @@ class PostController extends Controller
 
     }
 
-    // public function getTest(Request $request)
-    // {
-    //     dump($request);
-    //     dump('Ceci est un test');
 
-
-    // }
-
+    /**
+     * Delete a posy
+     *
+     * @param  mixed $id
+     * @return void
+     */
     public function delete($id)
     {
-        dump($id);
-        dd('test delete');
+        $post = Post::find($id);
+        $post->delete();
 
+        return redirect('/');
     }
 }
