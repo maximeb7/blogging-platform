@@ -76,13 +76,23 @@
                     </div>
 
                 @if(isset($post))
-                <a href="{{ route('post.user', $post->user_name )}}"
+                <div style="display: flex;">
+                    <a href="/"
                     style="border: none;margin-top: 2%; color:white;">
+                    <button class="favorite styled button-30" type="button-29"
+                        style="border-radius: 4px;font-size: 12px; heigth:23px;width:100%; background-color: white;color:#343434 !important">
+                        Home
+                    </button>
+                </a>
+                <a href="{{ route('post.user', $post->user_name )}}"
+                    style="border: none;margin-top: 2%;margin-left:2%; color:white;">
                     <button class="favorite styled button-30" type="button-29"
                         style="border-radius: 4px;font-size: 12px; heigth:23px;width:100%; background-color:#343434;color:white !important">
                         Go to {{$post->user_name}} blog
                     </button>
                 </a>
+                </div>
+
             </div>
 
 
