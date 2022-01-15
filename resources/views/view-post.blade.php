@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <noscript>
         <link rel="stylesheet" href=" {{ 'assets/css/noscript.css' }}" />
     </noscript>
@@ -71,7 +79,7 @@
                 <a href="{{ route('post.user', $post->user_name )}}"
                     style="border: none;margin-top: 2%; color:white;">
                     <button class="favorite styled button-30" type="button-29"
-                        style="font-size: 12px; heigth:23px;width:100%; background-color:#343434;color:white !important">
+                        style="border-radius: 4px;font-size: 12px; heigth:23px;width:100%; background-color:#343434;color:white !important">
                         Go to {{$post->user_name}} blog
                     </button>
                 </a>
@@ -87,17 +95,46 @@
             <div style="display: flex; flex-direction: row;">
                 <a href="" style="border: none;margin-top: 7%; color:white;">
                 <button class="favorite styled button-30" type="button-29"
-                    style="font-size: 12px; heigth:23px;width:100%; background-color:#6c6c6c;color:white !important">
+                    style="font-size: 12px; heigth:23px;width:100%; background-color:#6c6c6c;color:white !important; font-family:Arial, Helvetica, sans-serif; border-radius:4px;">
                     Edit
                 </button>
                 </a>
-                <a href="" style="border: none;margin-top: 7%;margin-left:2%; color:white;">
-                <button class="favorite styled button-30" type="button-29"
+                {{-- <a href="{{ route('delete.post', $post->id) }}" style="border: none;margin-top: 7%;margin-left:2%; color:white;"> --}}
+               {{-- <button class="favorite styled button-30" type="button-29" toggle="modal" data-target="#exampleModal"
                     style="font-size: 12px; heigth:23px;width:100%; background-color:#414141;color:white !important">
                     Delete
-                </button>
-                </a>
+                </button> --}}
+                <button type="button" class="favorite styled button-30" data-toggle="modal" data-target="#exampleModal" style="font-size: 12px; heigth:23px;width:15%; background-color:#414141;color:white !important; margin-top: 7%; margin-left: 1%; font-family:Arial, Helvetica, sans-serif; border-radius: 4px;">
+                    Delete
+                  </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Delete post</h5>
+                                <a type="button" class="favorite styled button-30" data-dismiss="modal" aria-label="Close" style="border:none">
+                                    <span aria-hidden="true">&times;</span>
+                                </a>
+                            </div>
+                            <div class="modal-body">
+                                Do you really want to delete this post ?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary mr-r-5" data-dismiss="modal" style="font-size: 12px; heigth:23px;width:20%; background-color:white;color:#414141 !important; margin-top: 7%; margin-left: 1%; font-family:Arial, Helvetica, sans-serif; border-radius: 4px;">Cancel</button>
+                                <a href="{{ route('delete.post', $post->id) }}" style="border:none; width:34%; margin-top:4.7%; margin-right:16%">
+                                    <button type="button" class="btn btn-primary" style="font-size: 12px; heigth:23px;width:60%; background-color:#414141;color:white !important; margin-top: 7%; margin-left: 1%; font-family:Arial, Helvetica, sans-serif; border-radius: 4px;">Delete</button>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- </a> --}}
             </div>
+
 
                 @endif
 

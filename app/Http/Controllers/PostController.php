@@ -80,11 +80,18 @@ class PostController extends Controller
 
     }
 
-    public function getTest(Request $request)
-    {
-        dump($request);
-        dump('Ceci est un test');
+    // public function getTest(Request $request)
+    // {
+    //     dump($request);
+    //     dump('Ceci est un test');
 
+
+    // }
+
+    public function delete($id)
+    {
+        dump($id);
+        dd('test delete');
 
     }
 }

@@ -34,6 +34,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/delete/{id}', 'App\Http\Controllers\PostController@delete')->name('delete.post');
 #Region Blog
 //Route::post('/create_blog', 'App\Http\Controllers\BlogController@create')->middleware('auth');
 
