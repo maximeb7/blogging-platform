@@ -64,25 +64,40 @@
             <div class="inner">
                 <div class="row justify-content-between mh-100">
                     <div class="col-sm-4">
-                        @if(isset($post) )
-                          <h1 style="margin: 0 0 0 0">{{ $post->title }}</h1>
-                          <h6 style="color: #5b5b5b;"> by {{ $post->user_name }}</h6>
+                        <h1>Edit post</h1>
+                        <div id="app">
 
-                        @endif
+                            @if(isset($post))
 
+                            <section>
+                                <div style="margin-left: 18%; width:900px;">
+                                    <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="/update_post/{{ $post->id }}">
+                                        {{ csrf_field() }}
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Title</label>
+                                            <input type="text" id="title" name="title" value="{{ old('title',$post->title  )}}" class="form-control" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Description</label>
+
+                                            <textarea name="post_content" id="mytextarea" cols="30" rows="10">{{ old('post_content',$post->post_content) }}</textarea>
+                                        </div>
+                                        <input id="author" name="author" type="hidden" value="{{Auth::user()->id}}">
+
+                                        <button type="submit" class="favorite styled button-30" type="button-29"
+                                            style="font-size: 12px; heigth:23px;width:15%; background-color:#6c6c6c;color:white !important; font-family:Arial, Helvetica, sans-serif; border-radius:4px;">Save</button>
+                                    </form>
+                                </div>
+
+                            </section>
+                        </div>
 
 
 
                     </div>
 
-                @if(isset($post))
-                <a href="{{ route('post.user', $post->user_name )}}"
-                    style="border: none;margin-top: 2%; color:white;">
-                    <button class="favorite styled button-30" type="button-29"
-                        style="border-radius: 4px;font-size: 12px; heigth:23px;width:100%; background-color:#343434;color:white !important">
-                        Go to {{$post->user_name}} blog
-                    </button>
-                </a>
+
+                @endif
             </div>
 
 
@@ -90,34 +105,11 @@
                 <img src="images/blog-fullscreen-1-1920x700.jpg" class="img-fluid" alt="" />
             </div>
 
-            <div>{!! $post->post_content !!}</div>
-            @if(Auth::user() && Auth::user()->id == $post->user_id)
-            <div style="display: flex; flex-direction: row;">
-                <a href="{{ route('post.edit', ['username' => $post->user_name , 'slug_post' => $post->slug_title]) }}" style="border: none;margin-top: 7%; color:white;">
-                <button class="favorite styled button-30" type="button-29"
-                    style="font-size: 12px; heigth:23px;width:100%; background-color:#6c6c6c;color:white !important; font-family:Arial, Helvetica, sans-serif; border-radius:4px;">
-                    Edit
-                </button>
-                </a>
-                {{-- <a href="{{ route('delete.post', $post->id) }}" style="border: none;margin-top: 7%;margin-left:2%; color:white;"> --}}
-               {{-- <button class="favorite styled button-30" type="button-29" toggle="modal" data-target="#exampleModal"
-                    style="font-size: 12px; heigth:23px;width:100%; background-color:#414141;color:white !important">
-                    Delete
-                </button> --}}
-                <button type="button" class="favorite styled button-30" data-toggle="modal" data-target="#exampleModal" style="font-size: 12px; heigth:23px;width:15%; background-color:#414141;color:white !important; margin-top: 7%; margin-left: 1%; font-family:Arial, Helvetica, sans-serif; border-radius: 4px;">
-                    Delete
-                  </button>
-
-                <!-- Modal -->
-                @include('delete-popup')
-                {{-- </a> --}}
-            </div>
+            <div></div>
 
 
-                @endif
 
 
-                @endif
             </div>
         </div>
 
@@ -171,6 +163,15 @@
         </footer>
 
     </div>
+    <script src="https://cdn.tiny.cloud/1/skvzsabyp0l5c6b7n28tu058vv89ba5ib3qj6rs3sn7xx0dx/tinymce/5/tinymce.min.js"
+    referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+           selector:'#mytextarea',
+           height:450
+       });
+</script>
+<script src="{{ asset('js/app.js') }}"></script>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>

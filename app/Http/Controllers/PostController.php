@@ -108,4 +108,43 @@ class PostController extends Controller
 
         return redirect('/');
     }
+
+    /**
+     * editView
+     *
+     * @param  mixed $username
+     * @param  mixed $slug_post
+     * @return void
+     */
+    public function editView($username, $slug_post)
+    {
+        $post = Post::where([
+            ['user_name','=', $username],
+            ['slug_title','=', $slug_post]
+        ])->first();
+
+        return view('edit-post', ['post' => $post]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        // dump(explode('/',$request->getPathInfo()));
+
+        // dd($request->getPathInfo());
+
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|string|max:50',
+            'post_content' => 'required',
+            'author' => 'required',
+        ]);
+
+        $post = Post::find($id);
+        $post->title = $request->get('title');
+        $post->post_content = $request->get('post_content');
+        $post->save();
+
+        return redirect()->route('post.see',['username'=> $post->user_name, 'slug_post' => $post->slug_title]);
+        dd('update method');
+
+    }
 }

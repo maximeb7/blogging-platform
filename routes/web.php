@@ -30,6 +30,9 @@ Route::get('/register', 'App\Http\Controllers\RegisteredUserController@create')
                 ->middleware('guest')
                 ->name('register');
 
+Route::get('/{username}/{slug_post}/edit-post', 'App\Http\Controllers\PostController@editView')->name('post.edit');
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -41,6 +44,7 @@ Route::get('/delete/{id}', 'App\Http\Controllers\PostController@delete')->name('
 
 #RegionPost
 Route::post('/create_post', 'App\Http\Controllers\PostController@create')->middleware('auth');
+Route::post('/update_post/{id}', 'App\Http\Controllers\PostController@update')->middleware('auth');
 Route::get('/', 'App\Http\Controllers\PostController@index');
 // Route::get('/{username}/{slug_post}', function (){
 //     return view('view-post');
