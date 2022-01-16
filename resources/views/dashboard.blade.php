@@ -10,7 +10,7 @@
 
 
             <div style="color: white; border:none; margin-left:6%;margin-top:7%;">
-                <span class="fa fa-eye"></span><a href="#" class="w3-bar-item w3-button"
+                <span class="fa fa-eye"></span><a href="" class="w3-bar-item w3-button"
                     style="color: white; border:none; margin-left:12%;">My Posts</a><br>
             </div>
 
