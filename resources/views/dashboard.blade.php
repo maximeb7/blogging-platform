@@ -36,7 +36,7 @@
         <div>
             <h2 style="margin-left: 80px; margin-top:20px; color:rgb(62, 62, 62)">Hello {{ Auth::user()->name}} !</h2>
             @if (isset($success))
-            <h3 style="margin-left: 80px; margin-top:15px;"> Congratulations !!{{$success}}</h3>
+            <h6 style="margin-left: 80px; margin-top:15px;"> Congratulations !!{{$success}}</h6>
 
 
             @endif

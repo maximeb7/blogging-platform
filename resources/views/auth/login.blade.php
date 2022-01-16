@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<body style="background-color: white; display:flex; flex-direction:column; margin-left:38%; margin-top:15%; border: 1px solid #dddddd;; border-radius: 8px; width:25%; align-items:center; -webkit-box-shadow: -webkit-box-shadow: 2px 2px 17px 5px #D4D4D4;
-box-shadow: 2px 2px 17px 5px #D4D4D4;">
+<body style="background-color: white; display:flex; flex-direction:column; margin-left:38%; margin-top:11%; border: 1px solid #dddddd;; border-radius: 8px; width:25%; align-items:center; -webkit-box-shadow: -webkit-box-shadow: 2px 2px 17px 5px #D4D4D4;
+box-shadow: 2px 2px 17px 5px #D4D4D4; margin-bottom:10%">
     <x-guest-layout>
         <x-auth-card>
             <x-slot name="logo">

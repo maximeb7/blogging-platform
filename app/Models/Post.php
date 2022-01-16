@@ -11,7 +11,7 @@ use Spatie\Sluggable\SlugOptions;
 
 class Post extends Model
 {
-    use HasFactory, SoftDeletes, HasSlug;
+    use HasFactory, SoftDeletes;
 
     protected $table = "posts";
 
@@ -27,21 +27,21 @@ class Post extends Model
         'created_at' => 'datetime:Y-m-d H:00',
     ];
 
-    /**
-     * Get the options for generating the slug.
-     */
-    public function getSlugOptions(): SlugOptions
-    {
-        return SlugOptions::create()
-            ->generateSlugsFrom('title')
-            ->saveSlugsTo('slug_title')
-            ->slugsShouldBeNoLongerThan(50);;
-    }
+    // /**
+    //  * Get the options for generating the slug.
+    //  */
+    // public function getSlugOptions(): SlugOptions
+    // {
+    //     return SlugOptions::create()
+    //         ->generateSlugsFrom('title')
+    //         ->saveSlugsTo('slug_title')
+    //         ->slugsShouldBeNoLongerThan(50);;
+    // }
 
-    public function getRouteKeyName()
-    {
-        return 'slug_title';
-    }
+    // public function getRouteKeyName()
+    // {
+    //     return 'slug_title';
+    // }
 
 
 

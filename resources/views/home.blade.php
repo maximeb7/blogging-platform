@@ -141,7 +141,7 @@
 
                     <div class="row ">
                         @foreach ($array_posts as $post )
-                        <div class="col-sm-4 shadow-sm p-3 mb-5 bg-white rounded" style="padding-bottom:3% ">
+                        <div class="col-sm-4 shadow-sm p-3 mb-5 bg-white rounded" style="padding-bottom:3%">
                             <div style="margin-bottom: 2%;  height:40vh;">
                                 <h3 class="m-n">{{ Str::limit($post['title'],40)}}</h3>
                                 <p> {{$post->user_name}} | {{$post->created_at}}</p>
