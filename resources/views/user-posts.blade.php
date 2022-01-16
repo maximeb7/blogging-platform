@@ -27,6 +27,12 @@
                     <span class="fa fa-pencil"></span> <span class="title">AREA 17 - Blogging Platform</span>
                 </a>
 
+                <a href="/"
+                    style="border: none;margin-top: 2%; color:white;">
+                    <button class="favorite styled button-30" type="button-29"
+                        style="border-radius: 4px;margin-left:45%;font-size: 12px; heigth:23px;width:10%; background-color: white;color:#343434 !important">
+                        Home
+                    </button>
                 <!-- Nav -->
                 <nav>
                     <ul>
@@ -82,8 +88,8 @@
 
                                         </div>
 
-                                        <div style="display:flex; justify-content:right; padding-right:17%; margin-top:2%">
-                                            <div style="margin-right:30vh">
+                                        <div style="display:flex; justify-content:right; padding-right:17%;">
+                                            <div style="margin-right:20vh">
                                                 <a href="{{ route('post.see', [$post->user_name, $post->slug_title]) }} "
                                                     style="border: none;">
                                                     <button class="favorite styled button-30" type="button-29"
@@ -94,8 +100,8 @@
                                             </div>
                                         @if (Auth::user() && Auth::user()->id == $post->user_id)
 
-                                            <div>
-                                                <a href="" style="border: none;margin-top: 7%;margin-left:84%; color:white;">
+                                            {{-- <div>
+                                                <a href="{{ route('post.edit', ['username' => $post->user_name , 'slug_post' => $post->slug_title]) }}" style="border: none;margin-top: 7%;margin-left:84%; color:white;">
                                                     <button class="favorite styled button-30" type="button-29"
                                                         style="font-size: 10px; heigth:23px;width:100%; background-color:#636363;color:white!important">
                                                         Edit
@@ -104,12 +110,13 @@
                                             </div>
                                             <div>
                                                 <a href="" style="border: none;margin-top: 7%;margin-left:84%; color:white;">
-                                                    <button class="favorite styled button-30" type="button-29"
+                                                    <button class="favorite styled button-30" type="button-29" data-toggle="modal" data-target="#exampleModal"
                                                         style="font-size: 10px; heigth:23px;width:100%; background-color:#353535;color:white!important">
                                                         Delete
                                                     </button>
+                                                    @include('delete-popup')
                                                 </a>
-                                            </div>
+                                            </div> --}}
 
 
 
@@ -142,13 +149,6 @@
 
                             <br>
 
-                            <p><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></p>
-
-                            <p><a href="#">Non, magni, sequi. Explicabo illum quas debitis ut.</a></p>
-
-                            <p><a href="#">Vatae expedita deleniti optio ex adipisci . </a></p>
-
-                            <p><a href="#">Soluta non modi dolorem voluptates dolor laborum.</a></p>
                         </div>
                     </div>
                 </div>
