@@ -12,10 +12,17 @@
                                 Do you really want to delete this post ?
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary mr-r-5" data-dismiss="modal" style="font-size: 12px; heigth:23px;width:20%; background-color:white;color:#414141 !important; margin-top: 7%; margin-left: 1%; font-family:Arial, Helvetica, sans-serif; border-radius: 4px;">Cancel</button>
-                                <a href="{{ route('delete.post', $post->id) }}" style="border:none; width:34%; margin-top:4.7%; margin-right:16%">
-                                    <button type="button" class="btn btn-primary" style="font-size: 12px; heigth:23px;width:60%; background-color:#414141;color:white !important; margin-top: 7%; margin-left: 1%; font-family:Arial, Helvetica, sans-serif; border-radius: 4px;">Delete</button>
+                                <div style="display: flex;align-items:baseline; margin-left:2%">
+                                   <button type="button" class="btn btn-secondary mr-r-5" data-dismiss="modal" style="font-size: 12px; heigth:23px;width:70%; background-color:white;color:#414141 !important; margin-top: 7%; margin-left: 1%; font-family:Arial, Helvetica, sans-serif; border-radius: 4px;">Cancel</button>
+                                <form action="{{ route('delete.post', $post->id) }}" method="POST" style="width: 300px;margin-bottom:4%">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" class="btn btn-primary" style="font-size: 12px;margin-bottom:7%; heigth:23px;width:100%; background-color:#414141;color:white !important; margin-top: 7%; margin-left: 1%; font-family:Arial, Helvetica, sans-serif; border-radius: 4px;">Delete</button>
+                                </form>
+                                <a href="" style="border:none; width:34%;  margin-right:16%">
                                 </a>
+                                </div>
+
 
                             </div>
                         </div>
