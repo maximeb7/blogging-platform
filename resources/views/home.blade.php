@@ -85,15 +85,7 @@
             <nav id="menu">
                 <h2>Menu</h2>
                 <ul>
-                    <li><a href="index.html" class="active">Dashboard</a></li>
-
-                    <li><a href="blog.html">Blog</a></li>
-
-                    <li><a href="about.html">About</a></li>
-
-                    <li><a href="team.html">Authors</a></li>
-
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="/dashboard" class="active">Dashboard</a></li>
                 </ul>
             </nav>
 

@@ -15,13 +15,7 @@ use App\Http\Controllers\PostController;
 |
 */
 
-//  Route::get('/', function () {
-//      return view('home');
-//  });
 
-//Route::get('/', function () {
-//    return view('home', 'App\Http\Controllers\PostController@index');
-//});
 Route::get('/login', 'App\Http\Controllers\AuthenticatedSessionController@create' )
 ->middleware('guest')
 ->name('login');
@@ -39,23 +33,14 @@ Route::get('/dashboard', function () {
 
 Route::delete('/delete/{id}', 'App\Http\Controllers\PostController@delete')->name('delete.post');
 #Region Blog
-//Route::post('/create_blog', 'App\Http\Controllers\BlogController@create')->middleware('auth');
-
 
 #RegionPost
 Route::post('/create_post', 'App\Http\Controllers\PostController@create')->middleware('auth');
 Route::post('/update_post/{id}', 'App\Http\Controllers\PostController@update')->middleware('auth');
 Route::get('/', 'App\Http\Controllers\PostController@index');
-// Route::get('/{username}/{slug_post}', function (){
-//     return view('view-post');
-// })->name('post.see');
 
 Route::get('/{username}', 'App\Http\Controllers\PostController@getUserPost' )->name('post.user');
 Route::get('/{username}/{slug_post}','App\Http\Controllers\PostController@show' )->name('post.see');
-
-
-
-
 
 
 require __DIR__.'/auth.php';

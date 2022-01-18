@@ -20,9 +20,9 @@ box-shadow: 2px 2px 17px 5px #D4D4D4; margin-bottom:10%">
 
                 <!-- Email Address -->
                 <div>
-                    <x-label for="name" :value="__('User name')" /><br>
+                    <x-label for="email" :value="__('Email')" /><br>
 
-                    <x-input id="name" class="block mt-1 w-full" style="width: 100%" type="name" name="name" :value="old('name')" required autofocus />
+                    <x-input id="email" class="block mt-1 w-full" style="width: 100%" type="email" name="email" :value="old('email')" required autofocus />
                 </div>
 
                 <!-- Password -->

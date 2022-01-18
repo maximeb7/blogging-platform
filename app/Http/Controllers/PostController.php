@@ -7,10 +7,12 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Services\SlugService;
-use Spatie\QueryBuilder\QueryBuilder;
 use Illuminate\Support\Facades\Validator;
 
 
+/**
+ * PostController
+ */
 class PostController extends Controller
 {
 

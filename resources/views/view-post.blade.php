@@ -114,7 +114,7 @@
                     style="font-size: 12px; heigth:23px;width:100%; background-color:#414141;color:white !important">
                     Delete
                 </button> --}}
-                <button type="button" class="favorite styled button-30" data-toggle="modal" data-target="#exampleModal" style="font-size: 12px; heigth:23px;width:15%; background-color:#414141;color:white !important; margin-top: 7%; margin-left: 1%; font-family:Arial, Helvetica, sans-serif; border-radius: 4px;">
+                <button type="button" class="favorite styled button-30" data-toggle="modal" data-target="#exampleModal" style="font-size: 12px; heigth:23px;width:9%; background-color:#414141;color:white !important; margin-top: 7%; margin-left: 1%; font-family:Arial, Helvetica, sans-serif; border-radius: 4px;">
                     Delete
                   </button>
 

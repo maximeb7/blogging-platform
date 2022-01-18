@@ -1,6 +1,4 @@
 <x-app-layout>
-
-
     <div style="margin-top: 0px; box-shadow: 9px 1px 5px -1px rgba(209,209,209,0.53);
     -webkit-box-shadow: 9px 1px 5px -1px rgba(209,209,209,0.53);
     -moz-box-shadow: 9px 1px 5px -1px rgba(209,209,209,0.53); height:100%; display:flex;">
@@ -10,8 +8,8 @@
 
 
             <div style="color: white; border:none; margin-left:6%;margin-top:7%;">
-                <span class="fa fa-eye"></span><a href="" class="w3-bar-item w3-button"
-                    style="color: white; border:none; margin-left:12%;">My Posts</a><br>
+                <span class="fa fa-home"></span><a href="/" class="w3-bar-item w3-button"
+                    style="color: white; border:none; margin-left:12%;">Home</a><br>
             </div>
 
             <div style="color: white; border:none; margin-left:6%;margin-top:75vh;">
@@ -36,9 +34,7 @@
         <div>
             <h2 style="margin-left: 80px; margin-top:20px; color:rgb(62, 62, 62)">Hello {{ Auth::user()->name}} !</h2>
             @if (isset($success))
-            <h6 style="margin-left: 80px; margin-top:15px;"> Congratulations !!{{$success}}</h6>
-
-
+            <h6 style="margin-left: 80px; margin-top:7px;color: rgb(48, 48, 48)"> Congratulations !!{{$success}}</h6>
             @endif
             @include('createblog')
         </div>

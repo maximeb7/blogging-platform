@@ -84,7 +84,7 @@
                                         <div style="margin-bottom: 3%;  height:40vh;">
                                             <h3 class="m-n">{{ Str::limit($post['title'], 40) }}</h3>
                                             <p> {{ $post->user_name }} | {{ $post->created_at }}</p>
-                                            <div class="new-content">{!! Str::limit($post->post_content, 500) !!}</div>
+                                            <div class="new-content">{!! Str::limit($post->post_content, 600) !!}</div>
 
                                         </div>
 
