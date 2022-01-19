@@ -29,7 +29,6 @@ class SlugService {
 
         if(!is_null($is_user_slug_exist))
         {
-
             $slug_number = explode('-',$is_user_slug_exist->slug_title);
             if (ctype_digit($slug_number[array_key_last($slug_number)])) {
                 $number = (int)$slug_number[array_key_last($slug_number)];
@@ -39,7 +38,6 @@ class SlugService {
             } else {
                 array_push($slug_number, 1);
                 $slug = implode('-',$slug_number);
-
             }
         }
 

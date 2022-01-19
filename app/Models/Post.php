@@ -27,6 +27,11 @@ class Post extends Model
         'created_at' => 'datetime:Y-m-d H:00',
     ];
 
+
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
     // /**
     //  * Get the options for generating the slug.
     //  */

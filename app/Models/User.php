@@ -63,4 +63,11 @@ class User extends Authenticatable
     {
         return 'slug_name';
     }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+
 }
