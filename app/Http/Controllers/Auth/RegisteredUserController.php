@@ -37,8 +37,7 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'regex:/^[_A-z0-9]*((-|\s)*[_A-z0-9])*$/u' , 'max:50', 'unique:users,name'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            //'password' => ['required', 'min:8', 'regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/', 'confirmed', Rules\Password::defaults()],
-            'password' => ['required', 'min:8', 'regex:/(?:[^`!@#$%^&*\-_=+\'\/.,]*[`!@#$%^&*\-_=+\'\/.,]){2}/', 'confirmed', Rules\Password::defaults()],
+            'password' => ['required', 'min:8', 'regex:/(?:[^`!@#$%^&*\-_=+\'\/.,]*[`!@#$%^&*\-_=+\'\/.,]){2,}/', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user_slug = Str::of(strtolower($request->name))->slug('-');
