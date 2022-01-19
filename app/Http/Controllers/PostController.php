@@ -35,15 +35,11 @@ class PostController extends Controller
      * @param  mixed $request
      * @return void
      */
-    public function show(Request $request)
+    public function show($username, $slug_post)
     {
-        $url_slugs = explode('/',$request->getPathInfo());
-        $user_name = $url_slugs[1];
-        $slug_title = $url_slugs[2];
-
         $post = Post::where([
-            ['user_name','=',$user_name],
-            ['slug_title','=',$slug_title]
+            ['user_name','=',$username],
+            ['slug_title','=',$slug_post]
         ])->first();
 
         return view('view-post', ['post' => $post] );

@@ -66,11 +66,7 @@
                         </form>
                         @endif
 
-
-
                     </div>
-
-
                     <!-- Nav -->
                     <nav>
                         <ul>
@@ -117,20 +113,14 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-
                 <br>
                 <br>
-
                 <div class="inner">
                     <!-- About Us -->
-
-
                     <br>
-
                     <h2 class="h2" style="color: rgb(18, 18, 18)">Latest blog posts</h2>
 
-
-
+                    @if(!is_null($array_posts))
                     <div class="row ">
                         @foreach ($array_posts as $post )
                         <div class="col-sm-4 shadow-sm p-3 mb-5 bg-white rounded" style="padding-bottom:3%">
@@ -138,7 +128,6 @@
                                 <h3 class="m-n">{{ Str::limit($post['title'],40)}}</h3>
                                 <p> {{$post->user_name}} | {{$post->created_at}}</p>
                                 <div class="new-content">{!! Str::limit($post->post_content, 500) !!}</div>
-
                             </div>
                             <div style="display: flex; flex-direction:row; justify-content:right">
                                 <div style="">
@@ -160,22 +149,18 @@
                                     </a>
                                 </div>
                             </div>
-
-
                         </div>
-
                         @endforeach
-
-
-
                     </div>
+                    @else
+                    <div class="row">
+                        <h3>There are actually no posts to display</h3>
+                    </div>
+                    @endif
+
                     <div>
                         {!! $array_posts->links('vendor.pagination.bootstrap-4') !!}
                     </div>
-
-
-
-
                     <p class="text-center"><a href="blog.html">Read More &nbsp;<i
                                 class="fa fa-long-arrow-right"></i></a></p>
                 </div>
