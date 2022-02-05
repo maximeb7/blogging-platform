@@ -22,7 +22,7 @@
 
 				<!-- Logo -->
 				<a class="logo">
-					<span class="fa fa-pencil"></span> <span class="title" style="font-weight: bold; font-size:18px;">AREA 17 - Blogging Platform</span>
+					<span class="fa fa-pencil"></span> <span class="title" style="font-weight: bold; font-size:18px;">Bubble Blog</span>
 				</a>
 
 

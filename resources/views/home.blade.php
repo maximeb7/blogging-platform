@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Area17</title>
+    <title>Bubble</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" />
@@ -28,7 +28,7 @@
                     <!-- Logo -->
                     <a class="logo">
                         <span class="fa fa-pencil"></span> <span class="title"
-                            style="font-weight: bold; font-size:18px;">AREA 17 - Blogging Platform</span>
+                            style="font-weight: bold; font-size:18px;">Bubble Blog</span>
                     </a>
 
 

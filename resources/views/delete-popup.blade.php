@@ -13,7 +13,7 @@
                             </div>
                             <div class="modal-footer">
                                 <div style="display: flex;align-items:baseline; margin-left:2%">
-                                   <button type="button" class="btn btn-secondary mr-r-5" data-dismiss="modal" style="font-size: 12px; heigth:23px;width:70%; background-color:white;color:#414141 !important; margin-top: 7%; margin-left: 1%; font-family:Arial, Helvetica, sans-serif; border-radius: 4px;">Cancel</button>
+                                <button type="button" class="btn btn-secondary mr-r-5" data-dismiss="modal" style="font-size: 12px; heigth:23px;width:70%; background-color:white;color:#414141 !important; margin-top: 7%; margin-left: 1%; font-family:Arial, Helvetica, sans-serif; border-radius: 4px;">Cancel</button>
                                 <form action="{{ route('delete.post', $post->id) }}" method="POST" style="width: 300px;margin-bottom:4%">
                                     @method('DELETE')
                                     @csrf
