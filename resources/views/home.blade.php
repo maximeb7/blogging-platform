@@ -166,7 +166,7 @@
                 <div class="inner">
                     <section>
                         <h2>Contact Us</h2>
-                        <form method="post" action="#">
+                        <form method="" action="#">
                             <div class="fields">
                                 <div class="field half">
                                     <input type="text" name="name" id="name" placeholder="Name" />

@@ -4,8 +4,8 @@ box-shadow: 2px 2px 17px 5px #D4D4D4; margin-bottom:10%">
     <x-guest-layout>
         <x-auth-card>
             <x-slot name="logo">
-                <div style="margin-top: 8%;margin-left:36%;">
-                    <img src="images/area17-log.jpg"  alt="">
+                <div style="margin-top: 8%;margin-left:33%;">
+                    <img src="images/B.gif"  alt="">
                 </div>
             </x-slot>
 
